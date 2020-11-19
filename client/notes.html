@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/modal.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Handlee&family=Indie+Flower&display=swap"
+      rel="stylesheet"
+    />
+    <title>Notaty</title>
+  </head>
+  <body onload="updateNotesTable()">
+    <!-- Top menu -->
+    <div class="navigation-bar">
+      <div class="navigation-container">
+        <img src="images/note.png" />
+        <h1>Notaty</h1>
+      </div>
+    </div>
+
+    <!-- Search bar -->
+    <div>
+      <button
+        id="addBtn"
+        class="action-button"
+        onclick="openAddModal()"
+        type="button">
+        Add
+      </button>
+      <input
+        id="searchInput"
+        type="text"
+        class="search-input"
+        placeholder="Search for note by title ..."/>
+      <button id="searchBtn" onclick="searchNotes()" type="button" class="action-button">Search</button>
+    </div>
+
+    <!-- Notes table -->
+    <table id="notes-table">
+      <colgroup>
+        <col span="1" style="width: 20%;" />
+        <col span="1" style="width: 55%;" />
+        <col span="1" style="width: 20%;" />
+        <col span="1" style="width: 5%;" />
+      </colgroup>
+      <tr>
+        <th>Title</th>
+        <th>Content</th>
+        <th>Last Updated</th>
+        <th></th>
+      </tr>
+    </table>
+
+    <!-- Add Note Modal -->
+    <div id="addNoteModal" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content">
+        <div class="modal-header">
+          <span id="closeAdd" class="close">&times;</span>
+          <h2>New Note</h2>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="left">
+              <p>Title</p>
+            </div>
+            <div class="right">
+              <input id="addTitle" type="text" class="modal-input" />
+            </div>
+          </div>
+          <div class="row">
+            <div class="left">
+              <p>Content</p>
+            </div>
+            <div class="right">
+              <textarea id="addContent"></textarea>
+            </div>
+          </div>
+          <p id="addError" class="error"></p>
+        </div>
+        <div class="modal-footer">
+          <button
+            id="saveAddNoteBtn"
+            onclick="saveNewNote()"
+            type="button"
+            class="action-button">Save
+          </button>
+          <button id="cancelAddNoteBtn" type="button" class="action-button">
+            Cancel
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Edit Note Modal -->
+    <div id="editNoteModal" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content">
+        <div class="modal-header">
+          <span id="closeEdit" class="close">&times;</span>
+          <h2>Edit Note</h2>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="left">
+              <p>Title</p>
+            </div>
+            <div class="right">
+              <input id="editTitle" type="text" class="modal-input" />
+            </div>
+          </div>
+          <div class="row">
+            <div class="left">
+              <p>Content</p>
+            </div>
+            <div class="right">
+              <textarea id="editContent"></textarea>
+            </div>
+          </div>
+          <p id="editError" class="error"></p>
+        </div>
+        <div class="modal-footer">
+          <button id="saveEditNoteBtn" onclick="saveEditNote()" type="button" class="action-button">
+            Save
+          </button>
+          <button id="cancelEditNoteBtn" type="button" class="action-button">
+            Cancel
+          </button>
+        </div>
+      </div>
+    </div>
+    <script src="note-client.js"></script>
+    <script src="note-handler.js"></script>
+    <script src="modal-handler.js"></script>
+  </body>
+</html>

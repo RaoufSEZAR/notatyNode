@@ -1,0 +1,95 @@
+* {
+  font-family: Helvetica;
+}
+
+body {
+  text-align: center;
+}
+
+h1 {
+  font-family: "Indie Flower", cursive;
+}
+
+/* Top Navigation Bar */
+
+.navigation-container {
+  width: 0%;
+  float: left;
+  margin-left: 30px;
+}
+
+.navigation-bar {
+  background-color: rgb(51, 51, 51);
+  height: 80px;
+  width: 100%;
+  margin-bottom: 20px;
+  color: whitesmoke;
+  text-align: center;
+}
+
+.navigation-bar img {
+  float: left;
+  padding: 10px;
+  height: 60px;
+}
+
+/* Search Input Field */
+
+.search-input {
+  width: 50%;
+  height: 32px;
+  font-size: 17px;
+}
+
+/* The Blue Button */
+
+.action-button {
+  background-color: #008cba;
+  border: 2px solid #008cba;
+  color: white;
+  padding: 7px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 17px;
+  margin: 4px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.action-button:hover {
+  background-color: white;
+  color: black;
+}
+
+/* The Notes Table */
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 20px;
+  font-size: 17px;
+}
+
+td,
+th {
+  border: 1px solid rgb(233, 233, 233);
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #cecdcd;
+}
+
+tr:hover td {
+  background-color: lightblue;
+}
+
+/* New Note and Updated Note Animation */
+
+@keyframes new-row {
+  0% {
+    background-color: #ffd700;
+  }
+}
